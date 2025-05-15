@@ -1,0 +1,245 @@
+:root {
+    ---colorFuego: rgb(255, 102, 0);
+    ---colorAgua: rgb(60, 60, 255);
+    ---colorPlanta: greenyellow;
+    ---colorLucha: rgb(250, 48, 48);
+    ---colorVeneno: rgb(206, 76, 206);
+    ---colorTierra: peru;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgb(253, 67, 67);
+    color: white;
+    padding: 0.1rem 0.2rem 0.1rem 1rem;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+}
+
+#navButtons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.link {
+    color: white;
+    border-radius: 20px;
+    padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+    text-decoration: none;
+    margin-right: 1rem;
+    border: solid black 1px;
+}
+
+.linkFuego {
+    background-color: red;
+}
+
+.linkAgua {
+    background-color: blue;
+}
+
+.linkPlanta {
+    background-color: green;
+}
+
+nav {
+    display: none;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+#pokedex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr 1fr 1fr 0.5fr);
+    margin: 3rem 10% 8rem 10%;
+}
+
+.information {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(231, 231, 231);
+    margin: 1rem 0 1rem 5rem;
+    padding: 3rem;
+    border-radius: 80px 0 0 80px;
+    border-right: 0;
+    border: solid 6px;
+    border-right: none;
+}
+
+.information h2 {
+    margin-bottom: 0.5rem;
+}
+
+.pokemonCard {
+    margin: 1rem 5rem 1rem 0;
+    width: 80%;
+    border-radius: 0 80px 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 6px;
+    border-left: none;
+}
+
+.pokemonCard img {
+    width: 80%;
+}
+
+.tipo {
+    align-self: flex-end;
+    padding: 0.3rem 2rem 0.3rem 2rem;
+    border-radius: 8px;
+    margin-right: 2rem;
+}
+
+.tipoFuego {
+    background-color: var(---colorFuego);
+    color: white;
+}
+
+.tipoLucha {
+    background-color: var(---colorLucha);
+    color: white;
+}
+
+.tipoAgua {
+    background-color: var(---colorAgua);
+    color: white;
+}
+
+.tipoTierra {
+    background-image: linear-gradient(to bottom, rgb(245, 245, 63) 50%, peru 50%);
+    color: black;
+}
+
+.tipoPlanta {
+    background-color: greenyellow;
+    color: black;
+}
+
+.tipoVeneno {
+    background-color: var(---colorVeneno);
+    color: white;
+}
+
+.fuego {
+    border-color: var(---colorFuego);
+}
+
+.planta {
+    border-color: var(---colorPlanta);
+}
+
+.agua {
+    border-color: var(---colorAgua);
+}
+
+.lucha {
+    border-color: var(---colorLucha);
+}
+
+.veneno {
+    border-color: var(---colorVeneno);
+}
+
+.tierra {
+    border-color: var(---colorTierra);
+}
+
+.evoLine {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.evoLine img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 120px;
+    border: solid rgb(129, 129, 129) 4px;
+}
+
+.horizontal-arrow {
+    display: block;
+}
+
+.vertical-arrow {
+    display: none;
+}
+
+/*Acomodar la informacion de los pokemon y cambiar la direccion de la linea evolutiva a una columna*/
+@media (width < 896px) {
+    #pokedex {
+        display: grid;
+        grid-template-rows: repeat(3, 25rem 25rem 25rem 12, 5rem);
+    }
+
+    .information,
+    .pokemonCard {
+        margin: 2rem 0 0 0;
+        height: 25rem;
+    }
+
+    .pokemonCard {
+        width: 80%;
+        padding: 3rem;
+    }
+
+    .pokemonCard img {
+        width: 80%;
+    }
+
+    .evoLine {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vertical-arrow {
+        display: block;
+    }
+
+    .horizontal-arrow {
+        display: none;
+    }
+
+    /*Ocultar botones*/
+    #navButtons {
+        display: none;
+    }
+
+    /*Desplegar navbar*/
+    nav {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .link {
+        color: white;
+        border-radius: 0;
+        width: 34%;
+        text-decoration: none;
+        margin: 0;
+        border: none;
+        text-align: center;
+        padding: 1rem 0 1rem 0;
+    }
+}
