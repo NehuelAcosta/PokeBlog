@@ -53,6 +53,7 @@ header {
     background-color: green;
 }
 
+/*Ocultar la navbar por defecto*/
 nav {
     display: none;
 }
@@ -186,7 +187,7 @@ nav {
     display: none;
 }
 
-/*Acomodar la informacion de los pokemon y cambiar la direccion de la linea evolutiva a una columna*/
+/*Acomodar la informacion de los pokemon, desplegar la linea evolutiva en una columna y mostrar la navbar*/
 @media (width < 896px) {
     #pokedex {
         display: grid;
